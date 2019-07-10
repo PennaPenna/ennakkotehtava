@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aseman junatiedot</title> 
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" charset="iso-8859-1" src="station_timetables.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- HEADER-->
+<div class="header">
+<h3 id="title">Aseman junatiedot</h3>
+</div>
+    <div class="container">
+        <div class="inner_container">
+<!--ERROR MESSAGES-->
+    <div id="message"></div> 
+<!-- SEARCH -->
+    <div id="search_heading">
+    Hae aseman nimellä</div>
+    <div id="search_form"><form>  
+        <input required type="text" aria-label="Hae" id="keyword" size="25" name="keyword" value="Hae" onfocus="this.value=''" aria-hidden="true">
+        <button type="button" value="Hae" id="searchbtn" onclick="searchTheStation()"><i class="fa fa-search"></i></button>
+    </form></div>      
+            <script>
+                $('#keyword').keypress(function(e) {
+                if (e.which == 13) {
+                searchTheStation();
+                e.preventDefault();
+                }
+                });
+            </script>
+<!-- TABLE NAVIGATION // SAAPUVAT // LÄHTEVÄT-->
+         <div class="nav">
+             <button class="tab active" onclick="openTab(event,'AIKATAULU')">Helsinki</button>
+             <button class="tab" onclick="openTab(event,'LISTA_ASEMAT')">Lista asemista</button>
+            </div>    
+<!--TAULUKKO-->
+    <!--AIKATAULU-->
+    <div id="AIKATAULU" class="table">
+        <table class="timetable_table">
+            <thead class="timetable_header">
+              <tr>
+                <th>Tyyppi</th>
+              </tr>
+               </thead>
+              <tbody id="tyyppi">
+                </tbody>
+               </table>
+        <table class="timetable_table">
+          <thead class="timetable_header">
+              <tr>
+                <th>Juna</th>
+              </tr>
+               </thead>
+              <tbody id="juna">
+                </tbody>
+               </table>
+                     
+        <table class="timetable_table">
+          <thead class="timetable_header">
+              <tr>
+                <th>Saapuu / Lähtee</th>
+              </tr>
+               </thead>
+              <tbody id="aika">
+                </tbody>
+               </table>
+        <table class="timetable_table">
+          <thead class="timetable_header">
+              <tr>
+                <th>Asema</th>
+              </tr>
+               </thead>
+              <tbody id="asema">
+                </tbody>
+               </table>
+            </div>
+    
+    <!-- ASEMAT -->        
+    <div id="LISTA_ASEMAT"  class="table" style="display:none">
+        <table class="timetable_table_list">
+          <thead class="timetable_header">
+              <tr>
+                <th>Kaikki asemat</th>
+              </tr>
+               </thead>
+              <tbody>
+                <tr>
+                  <td id="list_stations"></td></tr>
+            </tbody>
+               </table>
+            </div>    
+    </div>
+    </div>
+</body>
+</html> 
