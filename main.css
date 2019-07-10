@@ -1,5 +1,4 @@
-
-
+/*CSS for aseman_aikataulut.html*/
 html {
     background-color: #fff;
 }
@@ -108,8 +107,7 @@ button.tab {
     color: #555;
 }
 .table{
-    padding-top: 10px;
-    
+    padding-top: 10px;  
 }
 .timetable_table {
     float: left;
@@ -146,7 +144,7 @@ tr:nth-child(odd) {
     width: 40%;
     margin-top:18px;
 }
-/*RESPONSIIVISET MUOTOILUT*/
+/* RESPONSIVE CSS*/
 @media screen and (max-width: 800px) {
 body {
     font-size: 70%;
@@ -176,7 +174,6 @@ td {
     width: 100%;
     margin: 10px 0px;
 }
-
 @media screen and (max-width: 500px) {
 .inner_container {
     margin-left: 0;
